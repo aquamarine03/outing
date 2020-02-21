@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Edit Likes #{{ $Likes->id }}</div>
+                            <div class="panel-heading">Edit likes #{{ $likes->id }}</div>
                             <div class="panel-body">
-                                <a href="{{ url("Likes") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
+                                <a href="{{ url("likes") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
                                 <br />
                                 <br />
 
@@ -19,24 +19,24 @@
                                 </ul>
                             @endif
     
-                            <form method="POST" action="/Likes/{{ $Likes->id }}" class="form-horizontal">
+                            <form method="POST" action="/likes/{{ $likes->id }}" class="form-horizontal">
                                         {{ csrf_field() }}
                                         {{ method_field("PUT") }}
             
 										<div class="form-group">
                                         <label for="id" class="col-md-4 control-label">id: </label>
-                                        <div class="col-md-6">{{$Likes->id}}</div>
+                                        <div class="col-md-6">{{$likes->id}}</div>
                                     </div>
 										<div class="form-group">
                                             <label for="user_id" class="col-md-4 control-label">user_id: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" required="required" name="user_id" type="text" id="user_id" value="{{$Likes->user_id}}">
+                                                <input class="form-control" required="required" name="user_id" type="text" id="user_id" value="{{$likes->user_id}}">
                                             </div>
                                         </div>
 										<div class="form-group">
                                             <label for="post_id" class="col-md-4 control-label">post_id: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" name="post_id" type="text" id="post_id" value="{{$Likes->post_id}}">
+                                                <input class="form-control" name="post_id" type="text" id="post_id" value="{{$likes->post_id}}">
                                             </div>
                                         </div>
                

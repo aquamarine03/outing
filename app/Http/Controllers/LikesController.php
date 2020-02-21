@@ -22,12 +22,12 @@ use App\Like;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $Likes = Like::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("post_id", "LIKE", "%$keyword%")->paginate($perPage);
+                $likes = Like::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("post_id", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $Likes = Like::paginate($perPage);
+                $likes = Like::paginate($perPage);
                 
             }          
-            return view("Likes.index", compact("Likes"));
+            return view("likes.index", compact("likes"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\Like;
          */
         public function create()
         {
-            return view("Likes.create");
+            return view("likes.create");
         }
     
         /**
@@ -58,7 +58,7 @@ use App\Like;
             
             Like::create($requestData);
     
-            return redirect("Likes")->with("flash_message", "Likes added!");
+            return redirect("likes")->with("flash_message", "likes added!");
         }
     
         /**
@@ -70,9 +70,9 @@ use App\Like;
          */
         public function show($id)
         {
-            $Likes = Like::findOrFail($id);
+            $likes = Like::findOrFail($id);
     
-            return view("Likes.show", compact("Likes"));
+            return view("likes.show", compact("likes"));
         }
     
         /**
@@ -84,9 +84,9 @@ use App\Like;
          */
         public function edit($id)
         {
-            $Likes = Like::findOrFail($id);
+            $likes = Like::findOrFail($id);
     
-            return view("Likes.edit", compact("Likes"));
+            return view("likes.edit", compact("likes"));
         }
     
         /**
@@ -106,10 +106,10 @@ use App\Like;
             ]);
             $requestData = $request->all();
             
-            $Likes = Like::findOrFail($id);
-            $Likes->update($requestData);
+            $likes = Like::findOrFail($id);
+            $likes->update($requestData);
     
-            return redirect("Likes")->with("flash_message", "Likes updated!");
+            return redirect("likes")->with("flash_message", "likes updated!");
         }
     
         /**
@@ -123,7 +123,7 @@ use App\Like;
         {
             Like::destroy($id);
     
-            return redirect("Likes")->with("flash_message", "Likes deleted!");
+            return redirect("likes")->with("flash_message", "likes deleted!");
         }
     }
     //=======================================================================

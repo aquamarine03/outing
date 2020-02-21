@@ -76,36 +76,36 @@ Route::delete("UserDetails/{id}", "UserDetailsController@destroy");
 
 //=======================================================================
 //index
-Route::get("Likes/", "LikesController@index");
+Route::get("likes/", "LikesController@index");
 //create
-Route::get("Likes/create", "LikesController@create");
+Route::get("likes/create", "LikesController@create");
 //show
-Route::get("Likes/{id}", "LikesController@show");
+Route::get("likes/{id}", "LikesController@show");
 //store
-Route::post("Likes/store", "LikesController@store");
+Route::post("likes/store", "LikesController@store");
 //edit
-Route::get("Likes/{id}/edit", "LikesController@edit");
+Route::get("likes/{id}/edit", "LikesController@edit");
 //update
-Route::put("Likes/{id}", "LikesController@update");
+Route::put("likes/{id}", "LikesController@update");
 //destroy
-Route::delete("Likes/{id}", "LikesController@destroy");
+Route::delete("likes/{id}", "LikesController@destroy");
 //=======================================================================
 
 //=======================================================================
 //index
-Route::get("Places/", "PlacesController@index");
+Route::get("places/", "PlacesController@index");
 //create
-Route::get("Places/create", "PlacesController@create");
+Route::get("places/create", "PlacesController@create");
 //show
-Route::get("Places/{id}", "PlacesController@show");
+Route::get("places/{id}", "PlacesController@show");
 //store
-Route::post("Places/store", "PlacesController@store");
+Route::post("places/store", "PlacesController@store");
 //edit
-Route::get("Places/{id}/edit", "PlacesController@edit");
+Route::get("places/{id}/edit", "PlacesController@edit");
 //update
-Route::put("Places/{id}", "PlacesController@update");
+Route::put("places/{id}", "PlacesController@update");
 //destroy
-Route::delete("Places/{id}", "PlacesController@destroy");
+Route::delete("places/{id}", "PlacesController@destroy");
 //=======================================================================
 
 //=======================================================================

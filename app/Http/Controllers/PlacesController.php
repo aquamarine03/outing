@@ -22,12 +22,12 @@ use App\Place;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $Places = Place::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("place_name", "LIKE", "%$keyword%")->orWhere("place_address", "LIKE", "%$keyword%")->orWhere("place_img", "LIKE", "%$keyword%")->paginate($perPage);
+                $places = Place::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("place_name", "LIKE", "%$keyword%")->orWhere("place_address", "LIKE", "%$keyword%")->orWhere("place_img", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $Places = Place::paginate($perPage);
+                $places = Place::paginate($perPage);
                 
             }          
-            return view("Places.index", compact("Places"));
+            return view("places.index", compact("places"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\Place;
          */
         public function create()
         {
-            return view("Places.create");
+            return view("places.create");
         }
     
         /**
@@ -59,7 +59,7 @@ use App\Place;
             
             Place::create($requestData);
     
-            return redirect("Places")->with("flash_message", "Places added!");
+            return redirect("places")->with("flash_message", "Places added!");
         }
     
         /**
@@ -71,9 +71,9 @@ use App\Place;
          */
         public function show($id)
         {
-            $Places = Place::findOrFail($id);
+            $places = Place::findOrFail($id);
     
-            return view("Places.show", compact("Places"));
+            return view("places.show", compact("places"));
         }
     
         /**
@@ -85,9 +85,9 @@ use App\Place;
          */
         public function edit($id)
         {
-            $Places = Place::findOrFail($id);
+            $places = Place::findOrFail($id);
     
-            return view("Places.edit", compact("Places"));
+            return view("places.edit", compact("places"));
         }
     
         /**
@@ -108,10 +108,10 @@ use App\Place;
             ]);
             $requestData = $request->all();
             
-            $Places = Place::findOrFail($id);
-            $Places->update($requestData);
+            $places = Place::findOrFail($id);
+            $places->update($requestData);
     
-            return redirect("Places")->with("flash_message", "Places updated!");
+            return redirect("places")->with("flash_message", "Places updated!");
         }
     
         /**
@@ -125,7 +125,7 @@ use App\Place;
         {
             Place::destroy($id);
     
-            return redirect("Places")->with("flash_message", "Places deleted!");
+            return redirect("places")->with("flash_message", "Places deleted!");
         }
     }
     //=======================================================================

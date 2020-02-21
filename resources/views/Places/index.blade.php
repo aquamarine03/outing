@@ -9,11 +9,11 @@
                             <div class="panel-body">
                             
                             
-                                <a href="{{ url("Places/create") }}" class="btn btn-success btn-sm" title="Add New Places">
+                                <a href="{{ url("places/create") }}" class="btn btn-success btn-sm" title="Add New Places">
                                     Add New
                                 </a>
 
-                                <form method="GET" action="{{ url("Places") }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
+                                <form method="GET" action="{{ url("places") }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="search" placeholder="Search...">
                                         <span class="input-group-btn">
@@ -35,7 +35,7 @@
                                             <tr><th>id</th><th>place_name</th><th>place_address</th><th>place_img</th></tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($Places as $item)
+                                        @foreach($places as $item)
                                     
                                     <tr>
 
@@ -47,10 +47,10 @@
 
                                             <td>{{ $item->place_img}} </td>
   
-                                                <td><a href="{{ url("/Places/" . $item->id) }}" title="View Places"><button class="btn btn-info btn-xs">View</button></a></td>
-                                                <td><a href="{{ url("/Places/" . $item->id . "/edit") }}" title="Edit Places"><button class="btn btn-primary btn-xs">Edit</button></a></td>
+                                                <td><a href="{{ url("/places/" . $item->id) }}" title="View Places"><button class="btn btn-info btn-xs">View</button></a></td>
+                                                <td><a href="{{ url("/places/" . $item->id . "/edit") }}" title="Edit Places"><button class="btn btn-primary btn-xs">Edit</button></a></td>
                                                 <td>
-                                                    <form method="POST" action="/Places/{{ $item->id }}" class="form-horizontal" style="display:inline;">
+                                                    <form method="POST" action="/places/{{ $item->id }}" class="form-horizontal" style="display:inline;">
                                                         {{ csrf_field() }}
                                                         
                                                         {{ method_field("DELETE") }}
@@ -64,7 +64,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="pagination-wrapper"> {!! $Places->appends(["search" => Request::get("search")])->render() !!} </div>
+                                    <div class="pagination-wrapper"> {!! $places->appends(["search" => Request::get("search")])->render() !!} </div>
                                 </div>
                                 
 

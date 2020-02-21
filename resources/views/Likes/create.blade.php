@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Create New Likes</div>
+                            <div class="panel-heading">Create New likes</div>
                             <div class="panel-body">
-                                <a href="{{ url("/Likes") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
+                                <a href="{{ url("/likes") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
                                 <br />
                                 <br />
 
@@ -20,7 +20,7 @@
                                 @endif
                                 
                                 
-                                <form method="POST" action="/Likes/store" class="form-horizontal">
+                                <form method="POST" action="/likes/store" class="form-horizontal">
                                     {{ csrf_field() }}
 
     										<div class="form-group">
