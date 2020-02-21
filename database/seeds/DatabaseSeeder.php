@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //********************************************
+        // Cmd:[ php artisan db:seed ]
+        //********************************************
         // $this->call(UsersTableSeeder::class);
-    }
+		$this->call(UsersTableSeeder::class);
+		$this->call(PostsTableSeeder::class);
+		$this->call(UserRolesTableSeeder::class);
+		$this->call(UserDetailsTableSeeder::class);
+		$this->call(LikesTableSeeder::class);
+		$this->call(PlacesTableSeeder::class);
+		$this->call(WishsTableSeeder::class);
+   }
 }
