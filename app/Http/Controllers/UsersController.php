@@ -22,12 +22,12 @@ use App\User;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $Users = User::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("name", "LIKE", "%$keyword%")->orWhere("email", "LIKE", "%$keyword%")->orWhere("password", "LIKE", "%$keyword%")->paginate($perPage);
+                $users = User::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("name", "LIKE", "%$keyword%")->orWhere("email", "LIKE", "%$keyword%")->orWhere("password", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $Users = User::paginate($perPage);
+                $users = User::paginate($perPage);
                 
             }          
-            return view("Users.index", compact("Users"));
+            return view("users.index", compact("users"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\User;
          */
         public function create()
         {
-            return view("Users.create");
+            return view("users.create");
         }
     
         /**
@@ -59,7 +59,7 @@ use App\User;
             
             User::create($requestData);
     
-            return redirect("Users")->with("flash_message", "Users added!");
+            return redirect("users")->with("flash_message", "Users added!");
         }
     
         /**
@@ -71,9 +71,9 @@ use App\User;
          */
         public function show($id)
         {
-            $Users = User::findOrFail($id);
+            $users = User::findOrFail($id);
     
-            return view("Users.show", compact("Users"));
+            return view("users.show", compact("users"));
         }
     
         /**
@@ -85,9 +85,9 @@ use App\User;
          */
         public function edit($id)
         {
-            $Users = User::findOrFail($id);
+            $users = User::findOrFail($id);
     
-            return view("Users.edit", compact("Users"));
+            return view("users.edit", compact("users"));
         }
     
         /**
@@ -111,7 +111,7 @@ use App\User;
             $Users = User::findOrFail($id);
             $Users->update($requestData);
     
-            return redirect("Users")->with("flash_message", "Users updated!");
+            return redirect("users")->with("flash_message", "Users updated!");
         }
     
         /**
@@ -125,7 +125,7 @@ use App\User;
         {
             User::destroy($id);
     
-            return redirect("Users")->with("flash_message", "Users deleted!");
+            return redirect("users")->with("flash_message", "Users deleted!");
         }
     }
     //=======================================================================

@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Edit Users #{{ $Users->id }}</div>
+                            <div class="panel-heading">Edit Users #{{ $users->id }}</div>
                             <div class="panel-body">
-                                <a href="{{ url("Users") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
+                                <a href="{{ url("users") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
                                 <br />
                                 <br />
 
@@ -19,30 +19,30 @@
                                 </ul>
                             @endif
     
-                            <form method="POST" action="/Users/{{ $Users->id }}" class="form-horizontal">
+                            <form method="POST" action="/users/{{ $users->id }}" class="form-horizontal">
                                         {{ csrf_field() }}
                                         {{ method_field("PUT") }}
             
 										<div class="form-group">
                                         <label for="id" class="col-md-4 control-label">id: </label>
-                                        <div class="col-md-6">{{$Users->id}}</div>
+                                        <div class="col-md-6">{{$users->id}}</div>
                                     </div>
 										<div class="form-group">
                                             <label for="name" class="col-md-4 control-label">name: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" name="name" type="text" id="name" value="{{$Users->name}}">
+                                                <input class="form-control" name="name" type="text" id="name" value="{{$users->name}}">
                                             </div>
                                         </div>
 										<div class="form-group">
                                             <label for="email" class="col-md-4 control-label">email: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" required="required" name="email" type="text" id="email" value="{{$Users->email}}">
+                                                <input class="form-control" required="required" name="email" type="text" id="email" value="{{$users->email}}">
                                             </div>
                                         </div>
 										<div class="form-group">
                                             <label for="password" class="col-md-4 control-label">password: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" required="required" name="password" type="text" id="password" value="{{$Users->password}}">
+                                                <input class="form-control" required="required" name="password" type="text" id="password" value="{{$users->password}}">
                                             </div>
                                         </div>
                

@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Database\Seeder;
 
-    class WishsTableSeeder extends Seeder
+    class WishesTableSeeder extends Seeder
     {
         /**
          * Run the database seeds.
@@ -10,13 +10,13 @@ use Illuminate\Database\Seeder;
          */
         public function run()
         {
-            //Cmd: php artisan db:seed --class="WishsTableSeeder"
+            //Cmd: php artisan db:seed --class="WishesTableSeeder"
             
             $faker = Faker\Factory::create("en_US");
             
             for( $i=0; $i<10; $i++ ){
 
-                App\Wish::create([
+                App\Wishe::create([
 					"user_id" => $faker->randomDigit(),
 					"place_id" => $faker->randomDigit(),
 					"created_at" => $faker->dateTime("now"),

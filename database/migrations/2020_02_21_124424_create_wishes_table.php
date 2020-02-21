@@ -3,7 +3,7 @@
             use Illuminate\Database\Schema\Blueprint;
             use Illuminate\Database\Migrations\Migration;
             
-            class CreateWishsTable extends Migration
+            class CreateWishesTable extends Migration
             {
                 /**
                  * Run the migrations.
@@ -12,7 +12,7 @@
                  */
                 public function up()
                 {
-                    Schema::create("wishs", function (Blueprint $table) {
+                    Schema::create("wishes", function (Blueprint $table) {
 						$table->increments('id');
 						$table->integer('user_id');
 						$table->integer('place_id');
@@ -29,7 +29,7 @@
                  */
                 public function down()
                 {
-                    Schema::dropIfExists("wishs");
+                    Schema::dropIfExists("wishes");
                 }
             }
         

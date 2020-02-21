@@ -9,7 +9,7 @@ use DB;
 use App\Wish;
     
     //=======================================================================
-    class WishsController extends Controller
+    class WishesController extends Controller
     {
         /**
          * Display a listing of the resource.
@@ -22,12 +22,12 @@ use App\Wish;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $Wishs = Wish::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("place_id", "LIKE", "%$keyword%")->paginate($perPage);
+                $wishes = Wish::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("place_id", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $Wishs = Wish::paginate($perPage);
+                $wishes = Wish::paginate($perPage);
                 
             }          
-            return view("Wishs.index", compact("Wishs"));
+            return view("wishes.index", compact("wishes"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\Wish;
          */
         public function create()
         {
-            return view("Wishs.create");
+            return view("wishes.create");
         }
     
         /**
@@ -58,7 +58,7 @@ use App\Wish;
             
             Wish::create($requestData);
     
-            return redirect("Wishs")->with("flash_message", "Wishs added!");
+            return redirect("wishes")->with("flash_message", "Wishes added!");
         }
     
         /**
@@ -70,9 +70,9 @@ use App\Wish;
          */
         public function show($id)
         {
-            $Wishs = Wish::findOrFail($id);
+            $wishes = Wish::findOrFail($id);
     
-            return view("Wishs.show", compact("Wishs"));
+            return view("wishes.show", compact("wishes"));
         }
     
         /**
@@ -84,9 +84,9 @@ use App\Wish;
          */
         public function edit($id)
         {
-            $Wishs = Wish::findOrFail($id);
+            $wishes = Wish::findOrFail($id);
     
-            return view("Wishs.edit", compact("Wishs"));
+            return view("wishes.edit", compact("wishes"));
         }
     
         /**
@@ -106,10 +106,10 @@ use App\Wish;
             ]);
             $requestData = $request->all();
             
-            $Wishs = Wish::findOrFail($id);
-            $Wishs->update($requestData);
+            $wishes = Wish::findOrFail($id);
+            $wishes->update($requestData);
     
-            return redirect("Wishs")->with("flash_message", "Wishs updated!");
+            return redirect("wishes")->with("flash_message", "Wishes updated!");
         }
     
         /**
@@ -123,7 +123,7 @@ use App\Wish;
         {
             Wish::destroy($id);
     
-            return redirect("Wishs")->with("flash_message", "Wishs deleted!");
+            return redirect("wishes")->with("flash_message", "Wishes deleted!");
         }
     }
     //=======================================================================

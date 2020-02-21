@@ -110,7 +110,7 @@ li:hover{
 								<li><a href="/userDetails">UserDetails</a></li>
 								<li><a href="/likes">Likes</a></li>
 								<li><a href="/places">Places</a></li>
-								<li><a href="/Wishs">Wishs</a></li>
+								<li><a href="/wishes">Wishes</a></li>
                     </ul>
                 </div>
             </div>

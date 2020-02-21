@@ -9,11 +9,11 @@
                             <div class="panel-body">
                             
                             
-                                <a href="{{ url("Users/create") }}" class="btn btn-success btn-sm" title="Add New Users">
+                                <a href="{{ url("users/create") }}" class="btn btn-success btn-sm" title="Add New Users">
                                     Add New
                                 </a>
 
-                                <form method="GET" action="{{ url("Users") }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
+                                <form method="GET" action="{{ url("users") }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="search" placeholder="Search...">
                                         <span class="input-group-btn">
@@ -35,7 +35,7 @@
                                             <tr><th>id</th><th>name</th><th>email</th><th>password</th></tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($Users as $item)
+                                        @foreach($users as $item)
                                     
                                     <tr>
 
@@ -47,10 +47,10 @@
 
                                             <td>{{ $item->password}} </td>
   
-                                                <td><a href="{{ url("/Users/" . $item->id) }}" title="View Users"><button class="btn btn-info btn-xs">View</button></a></td>
-                                                <td><a href="{{ url("/Users/" . $item->id . "/edit") }}" title="Edit Users"><button class="btn btn-primary btn-xs">Edit</button></a></td>
+                                                <td><a href="{{ url("/users/" . $item->id) }}" title="View Users"><button class="btn btn-info btn-xs">View</button></a></td>
+                                                <td><a href="{{ url("/users/" . $item->id . "/edit") }}" title="Edit Users"><button class="btn btn-primary btn-xs">Edit</button></a></td>
                                                 <td>
-                                                    <form method="POST" action="/Users/{{ $item->id }}" class="form-horizontal" style="display:inline;">
+                                                    <form method="POST" action="/users/{{ $item->id }}" class="form-horizontal" style="display:inline;">
                                                         {{ csrf_field() }}
                                                         
                                                         {{ method_field("DELETE") }}
@@ -64,7 +64,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="pagination-wrapper"> {!! $Users->appends(["search" => Request::get("search")])->render() !!} </div>
+                                    <div class="pagination-wrapper"> {!! $users->appends(["search" => Request::get("search")])->render() !!} </div>
                                 </div>
                                 
 

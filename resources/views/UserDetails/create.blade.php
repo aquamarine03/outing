@@ -7,7 +7,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">Create New UserDetails</div>
                             <div class="panel-body">
-                                <a href="{{ url("/UserDetails") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
+                                <a href="{{ url("/userDetails") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
                                 <br />
                                 <br />
 
@@ -20,7 +20,7 @@
                                 @endif
                                 
                                 
-                                <form method="POST" action="/UserDetails/store" class="form-horizontal">
+                                <form method="POST" action="/userDetails/store" class="form-horizontal">
                                     {{ csrf_field() }}
 
     										<div class="form-group">

@@ -8,19 +8,19 @@ Route::get("/", function () {
 
 //=======================================================================
 //index
-Route::get("Users/", "UsersController@index");
+Route::get("users/", "UsersController@index");
 //create
-Route::get("Users/create", "UsersController@create");
+Route::get("users/create", "UsersController@create");
 //show
-Route::get("Users/{id}", "UsersController@show");
+Route::get("users/{id}", "UsersController@show");
 //store
-Route::post("Users/store", "UsersController@store");
+Route::post("users/store", "UsersController@store");
 //edit
-Route::get("Users/{id}/edit", "UsersController@edit");
+Route::get("users/{id}/edit", "UsersController@edit");
 //update
-Route::put("Users/{id}", "UsersController@update");
+Route::put("users/{id}", "UsersController@update");
 //destroy
-Route::delete("Users/{id}", "UsersController@destroy");
+Route::delete("users/{id}", "UsersController@destroy");
 //=======================================================================
 
 //=======================================================================
@@ -110,17 +110,17 @@ Route::delete("places/{id}", "PlacesController@destroy");
 
 //=======================================================================
 //index
-Route::get("Wishs/", "WishsController@index");
+Route::get("wishes/", "WishesController@index");
 //create
-Route::get("Wishs/create", "WishsController@create");
+Route::get("wishes/create", "WishesController@create");
 //show
-Route::get("Wishs/{id}", "WishsController@show");
+Route::get("wishes/{id}", "WishesController@show");
 //store
-Route::post("Wishs/store", "WishsController@store");
+Route::post("wishes/store", "WishesController@store");
 //edit
-Route::get("Wishs/{id}/edit", "WishsController@edit");
+Route::get("wishes/{id}/edit", "WishesController@edit");
 //update
-Route::put("Wishs/{id}", "WishsController@update");
+Route::put("wishes/{id}", "WishesController@update");
 //destroy
-Route::delete("Wishs/{id}", "WishsController@destroy");
+Route::delete("wishes/{id}", "WishesController@destroy");
 //=======================================================================
