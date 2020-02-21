@@ -9,11 +9,11 @@
                             <div class="panel-body">
                             
                             
-                                <a href="{{ url("UserRoles/create") }}" class="btn btn-success btn-sm" title="Add New UserRoles">
+                                <a href="{{ url("userRoles/create") }}" class="btn btn-success btn-sm" title="Add New UserRoles">
                                     Add New
                                 </a>
 
-                                <form method="GET" action="{{ url("UserRoles") }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
+                                <form method="GET" action="{{ url("userRoles") }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="search" placeholder="Search...">
                                         <span class="input-group-btn">
@@ -35,7 +35,7 @@
                                             <tr><th>id</th><th>role_name</th><th>user_id</th></tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($UserRoles as $item)
+                                        @foreach($userRoles as $item)
                                     
                                     <tr>
 
@@ -45,10 +45,10 @@
 
                                             <td>{{ $item->user_id}} </td>
   
-                                                <td><a href="{{ url("/UserRoles/" . $item->id) }}" title="View UserRoles"><button class="btn btn-info btn-xs">View</button></a></td>
-                                                <td><a href="{{ url("/UserRoles/" . $item->id . "/edit") }}" title="Edit UserRoles"><button class="btn btn-primary btn-xs">Edit</button></a></td>
+                                                <td><a href="{{ url("/userRoles/" . $item->id) }}" title="View UserRoles"><button class="btn btn-info btn-xs">View</button></a></td>
+                                                <td><a href="{{ url("/userRoles/" . $item->id . "/edit") }}" title="Edit UserRoles"><button class="btn btn-primary btn-xs">Edit</button></a></td>
                                                 <td>
-                                                    <form method="POST" action="/UserRoles/{{ $item->id }}" class="form-horizontal" style="display:inline;">
+                                                    <form method="POST" action="/userRoles/{{ $item->id }}" class="form-horizontal" style="display:inline;">
                                                         {{ csrf_field() }}
                                                         
                                                         {{ method_field("DELETE") }}
@@ -62,7 +62,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="pagination-wrapper"> {!! $UserRoles->appends(["search" => Request::get("search")])->render() !!} </div>
+                                    <div class="pagination-wrapper"> {!! $userRoles->appends(["search" => Request::get("search")])->render() !!} </div>
                                 </div>
                                 
 

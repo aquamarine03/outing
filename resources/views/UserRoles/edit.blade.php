@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Edit UserRoles #{{ $UserRoles->id }}</div>
+                            <div class="panel-heading">Edit UserRoles #{{ $userRoles->id }}</div>
                             <div class="panel-body">
-                                <a href="{{ url("UserRoles") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
+                                <a href="{{ url("userRoles") }}" title="Back"><button class="btn btn-warning btn-xs">Back</button></a>
                                 <br />
                                 <br />
 
@@ -19,24 +19,24 @@
                                 </ul>
                             @endif
     
-                            <form method="POST" action="/UserRoles/{{ $UserRoles->id }}" class="form-horizontal">
+                            <form method="POST" action="/userRoles/{{ $userRoles->id }}" class="form-horizontal">
                                         {{ csrf_field() }}
                                         {{ method_field("PUT") }}
             
 										<div class="form-group">
                                         <label for="id" class="col-md-4 control-label">id: </label>
-                                        <div class="col-md-6">{{$UserRoles->id}}</div>
+                                        <div class="col-md-6">{{$userRoles->id}}</div>
                                     </div>
 										<div class="form-group">
                                             <label for="role_name" class="col-md-4 control-label">role_name: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" required="required" name="role_name" type="text" id="role_name" value="{{$UserRoles->role_name}}">
+                                                <input class="form-control" required="required" name="role_name" type="text" id="role_name" value="{{$userRoles->role_name}}">
                                             </div>
                                         </div>
 										<div class="form-group">
                                             <label for="user_id" class="col-md-4 control-label">user_id: </label>
                                             <div class="col-md-6">
-                                                <input class="form-control" required="required" name="user_id" type="text" id="user_id" value="{{$UserRoles->user_id}}">
+                                                <input class="form-control" required="required" name="user_id" type="text" id="user_id" value="{{$userRoles->user_id}}">
                                             </div>
                                         </div>
                

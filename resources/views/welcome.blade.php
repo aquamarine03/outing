@@ -104,10 +104,10 @@ li:hover{
                     <h4>Example CRUD</h4>
                     <h4>1. Migrtion [ php artisan migrate ]<br>2. Update [ composer update ]<br>3. TestData [ php artisan db:seed ] <br>GO!!</h4>
                     <ul>
-								<li><a href="/Users">Users</a></li>
-								<li><a href="/Posts">Posts</a></li>
-								<li><a href="/UserRoles">UserRoles</a></li>
-								<li><a href="/UserDetails">UserDetails</a></li>
+								<li><a href="/users">Users</a></li>
+								<li><a href="/posts">Posts</a></li>
+								<li><a href="/userRoles">UserRoles</a></li>
+								<li><a href="/userDetails">UserDetails</a></li>
 								<li><a href="/likes">Likes</a></li>
 								<li><a href="/places">Places</a></li>
 								<li><a href="/Wishs">Wishs</a></li>

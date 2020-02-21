@@ -25,53 +25,53 @@ Route::delete("Users/{id}", "UsersController@destroy");
 
 //=======================================================================
 //index
-Route::get("Posts/", "PostsController@index");
+Route::get("posts/", "PostsController@index");
 //create
-Route::get("Posts/create", "PostsController@create");
+Route::get("posts/create", "PostsController@create");
 //show
-Route::get("Posts/{id}", "PostsController@show");
+Route::get("posts/{id}", "PostsController@show");
 //store
-Route::post("Posts/store", "PostsController@store");
+Route::post("posts/store", "PostsController@store");
 //edit
-Route::get("Posts/{id}/edit", "PostsController@edit");
+Route::get("posts/{id}/edit", "PostsController@edit");
 //update
-Route::put("Posts/{id}", "PostsController@update");
+Route::put("posts/{id}", "PostsController@update");
 //destroy
-Route::delete("Posts/{id}", "PostsController@destroy");
+Route::delete("posts/{id}", "PostsController@destroy");
 //=======================================================================
 
 //=======================================================================
 //index
-Route::get("UserRoles/", "UserRolesController@index");
+Route::get("userRoles/", "UserRolesController@index");
 //create
-Route::get("UserRoles/create", "UserRolesController@create");
+Route::get("userRoles/create", "UserRolesController@create");
 //show
-Route::get("UserRoles/{id}", "UserRolesController@show");
+Route::get("userRoles/{id}", "UserRolesController@show");
 //store
-Route::post("UserRoles/store", "UserRolesController@store");
+Route::post("userRoles/store", "UserRolesController@store");
 //edit
-Route::get("UserRoles/{id}/edit", "UserRolesController@edit");
+Route::get("userRoles/{id}/edit", "UserRolesController@edit");
 //update
-Route::put("UserRoles/{id}", "UserRolesController@update");
+Route::put("userRoles/{id}", "UserRolesController@update");
 //destroy
-Route::delete("UserRoles/{id}", "UserRolesController@destroy");
+Route::delete("userRoles/{id}", "UserRolesController@destroy");
 //=======================================================================
 
 //=======================================================================
 //index
-Route::get("UserDetails/", "UserDetailsController@index");
+Route::get("userDetails/", "UserDetailsController@index");
 //create
-Route::get("UserDetails/create", "UserDetailsController@create");
+Route::get("userDetails/create", "UserDetailsController@create");
 //show
-Route::get("UserDetails/{id}", "UserDetailsController@show");
+Route::get("userDetails/{id}", "UserDetailsController@show");
 //store
-Route::post("UserDetails/store", "UserDetailsController@store");
+Route::post("userDetails/store", "UserDetailsController@store");
 //edit
-Route::get("UserDetails/{id}/edit", "UserDetailsController@edit");
+Route::get("userDetails/{id}/edit", "UserDetailsController@edit");
 //update
-Route::put("UserDetails/{id}", "UserDetailsController@update");
+Route::put("userDetails/{id}", "UserDetailsController@update");
 //destroy
-Route::delete("UserDetails/{id}", "UserDetailsController@destroy");
+Route::delete("userDetails/{id}", "UserDetailsController@destroy");
 //=======================================================================
 
 //=======================================================================

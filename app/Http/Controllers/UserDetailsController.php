@@ -22,12 +22,12 @@ use App\UserDetail;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $UserDetails = UserDetail::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("address", "LIKE", "%$keyword%")->orWhere("gender", "LIKE", "%$keyword%")->orWhere("age", "LIKE", "%$keyword%")->paginate($perPage);
+                $userDetails = UserDetail::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("address", "LIKE", "%$keyword%")->orWhere("gender", "LIKE", "%$keyword%")->orWhere("age", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $UserDetails = UserDetail::paginate($perPage);
+                $userDetails = UserDetail::paginate($perPage);
                 
             }          
-            return view("UserDetails.index", compact("UserDetails"));
+            return view("userDetails.index", compact("userDetails"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\UserDetail;
          */
         public function create()
         {
-            return view("UserDetails.create");
+            return view("userDetails.create");
         }
     
         /**
@@ -60,7 +60,7 @@ use App\UserDetail;
             
             UserDetail::create($requestData);
     
-            return redirect("UserDetails")->with("flash_message", "UserDetails added!");
+            return redirect("userDetails")->with("flash_message", "UserDetails added!");
         }
     
         /**
@@ -72,9 +72,9 @@ use App\UserDetail;
          */
         public function show($id)
         {
-            $UserDetails = UserDetail::findOrFail($id);
+            $userDetails = UserDetail::findOrFail($id);
     
-            return view("UserDetails.show", compact("UserDetails"));
+            return view("userDetails.show", compact("userDetails"));
         }
     
         /**
@@ -86,9 +86,9 @@ use App\UserDetail;
          */
         public function edit($id)
         {
-            $UserDetails = UserDetail::findOrFail($id);
+            $userDetails = UserDetail::findOrFail($id);
     
-            return view("UserDetails.edit", compact("UserDetails"));
+            return view("userDetails.edit", compact("userDetails"));
         }
     
         /**
@@ -110,10 +110,10 @@ use App\UserDetail;
             ]);
             $requestData = $request->all();
             
-            $UserDetails = UserDetail::findOrFail($id);
-            $UserDetails->update($requestData);
+            $userDetails = UserDetail::findOrFail($id);
+            $userDetails->update($requestData);
     
-            return redirect("UserDetails")->with("flash_message", "UserDetails updated!");
+            return redirect("userDetails")->with("flash_message", "UserDetails updated!");
         }
     
         /**
@@ -127,7 +127,7 @@ use App\UserDetail;
         {
             UserDetail::destroy($id);
     
-            return redirect("UserDetails")->with("flash_message", "UserDetails deleted!");
+            return redirect("userDetails")->with("flash_message", "UserDetails deleted!");
         }
     }
     //=======================================================================

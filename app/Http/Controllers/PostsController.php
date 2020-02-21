@@ -22,12 +22,12 @@ use App\Post;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $Posts = Post::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("place_id", "LIKE", "%$keyword%")->orWhere("rating", "LIKE", "%$keyword%")->orWhere("comment", "LIKE", "%$keyword%")->orWhere("post_img", "LIKE", "%$keyword%")->paginate($perPage);
+                $posts = Post::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->orWhere("place_id", "LIKE", "%$keyword%")->orWhere("rating", "LIKE", "%$keyword%")->orWhere("comment", "LIKE", "%$keyword%")->orWhere("post_img", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $Posts = Post::paginate($perPage);
+                $posts = Post::paginate($perPage);
                 
             }          
-            return view("Posts.index", compact("Posts"));
+            return view("posts.index", compact("posts"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\Post;
          */
         public function create()
         {
-            return view("Posts.create");
+            return view("posts.create");
         }
     
         /**
@@ -61,7 +61,7 @@ use App\Post;
             
             Post::create($requestData);
     
-            return redirect("Posts")->with("flash_message", "Posts added!");
+            return redirect("posts")->with("flash_message", "Posts added!");
         }
     
         /**
@@ -73,9 +73,9 @@ use App\Post;
          */
         public function show($id)
         {
-            $Posts = Post::findOrFail($id);
+            $posts = Post::findOrFail($id);
     
-            return view("Posts.show", compact("Posts"));
+            return view("posts.show", compact("posts"));
         }
     
         /**
@@ -87,9 +87,9 @@ use App\Post;
          */
         public function edit($id)
         {
-            $Posts = Post::findOrFail($id);
+            $posts = Post::findOrFail($id);
     
-            return view("Posts.edit", compact("Posts"));
+            return view("posts.edit", compact("posts"));
         }
     
         /**
@@ -112,10 +112,10 @@ use App\Post;
             ]);
             $requestData = $request->all();
             
-            $Posts = Post::findOrFail($id);
-            $Posts->update($requestData);
+            $posts = Post::findOrFail($id);
+            $posts->update($requestData);
     
-            return redirect("Posts")->with("flash_message", "Posts updated!");
+            return redirect("posts")->with("flash_message", "Posts updated!");
         }
     
         /**
@@ -129,7 +129,7 @@ use App\Post;
         {
             Post::destroy($id);
     
-            return redirect("Posts")->with("flash_message", "Posts deleted!");
+            return redirect("posts")->with("flash_message", "Posts deleted!");
         }
     }
     //=======================================================================

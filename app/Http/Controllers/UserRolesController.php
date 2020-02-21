@@ -22,12 +22,12 @@ use App\UserRole;
             $perPage = 25;
     
             if (!empty($keyword)) {
-                $UserRoles = UserRole::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("role_name", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->paginate($perPage);
+                $userRoles = UserRole::where("id", "LIKE", "%$keyword%")->orWhere("id", "LIKE", "%$keyword%")->orWhere("role_name", "LIKE", "%$keyword%")->orWhere("user_id", "LIKE", "%$keyword%")->paginate($perPage);
             } else {
-                $UserRoles = UserRole::paginate($perPage);
+                $userRoles = UserRole::paginate($perPage);
                 
             }          
-            return view("UserRoles.index", compact("UserRoles"));
+            return view("userRoles.index", compact("userRoles"));
         }
     
         /**
@@ -37,7 +37,7 @@ use App\UserRole;
          */
         public function create()
         {
-            return view("UserRoles.create");
+            return view("userRoles.create");
         }
     
         /**
@@ -58,7 +58,7 @@ use App\UserRole;
             
             UserRole::create($requestData);
     
-            return redirect("UserRoles")->with("flash_message", "UserRoles added!");
+            return redirect("userRoles")->with("flash_message", "UserRoles added!");
         }
     
         /**
@@ -70,9 +70,9 @@ use App\UserRole;
          */
         public function show($id)
         {
-            $UserRoles = UserRole::findOrFail($id);
+            $userRoles = UserRole::findOrFail($id);
     
-            return view("UserRoles.show", compact("UserRoles"));
+            return view("userRoles.show", compact("userRoles"));
         }
     
         /**
@@ -84,9 +84,9 @@ use App\UserRole;
          */
         public function edit($id)
         {
-            $UserRoles = UserRole::findOrFail($id);
+            $userRoles = UserRole::findOrFail($id);
     
-            return view("UserRoles.edit", compact("UserRoles"));
+            return view("userRoles.edit", compact("userRoles"));
         }
     
         /**
@@ -106,10 +106,10 @@ use App\UserRole;
             ]);
             $requestData = $request->all();
             
-            $UserRoles = UserRole::findOrFail($id);
-            $UserRoles->update($requestData);
+            $userRoles = UserRole::findOrFail($id);
+            $userRoles->update($requestData);
     
-            return redirect("UserRoles")->with("flash_message", "UserRoles updated!");
+            return redirect("userRoles")->with("flash_message", "UserRoles updated!");
         }
     
         /**
@@ -123,7 +123,7 @@ use App\UserRole;
         {
             UserRole::destroy($id);
     
-            return redirect("UserRoles")->with("flash_message", "UserRoles deleted!");
+            return redirect("userRoles")->with("flash_message", "UserRoles deleted!");
         }
     }
     //=======================================================================
